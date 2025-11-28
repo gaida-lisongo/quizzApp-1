@@ -8,12 +8,14 @@ class QuestionModel {
   final String enonce;
   final String categorieId;
   final List<String> choix;
+  final String correctAnswer;
 
   const QuestionModel({
     required this.id,
     required this.enonce,
     required this.categorieId,
     required this.choix,
+    required this.correctAnswer,
   });
 
   factory QuestionModel.fromJson(Map<String, dynamic> json) =>
@@ -26,12 +28,14 @@ class QuestionModel {
     String? enonce,
     String? categorieId,
     List<String>? choix,
+    String? correctAnswer,
   }) {
     return QuestionModel(
       id: id ?? this.id,
       enonce: enonce ?? this.enonce,
       categorieId: categorieId ?? this.categorieId,
       choix: choix ?? this.choix,
+      correctAnswer: correctAnswer ?? this.correctAnswer,
     );
   }
 }

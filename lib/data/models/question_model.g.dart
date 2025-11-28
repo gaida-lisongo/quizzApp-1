@@ -12,6 +12,7 @@ QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) =>
       enonce: json['enonce'] as String,
       categorieId: json['categorieId'] as String,
       choix: (json['choix'] as List<dynamic>).map((e) => e as String).toList(),
+      correctAnswer: json['correctAnswer'] as String,
     );
 
 Map<String, dynamic> _$QuestionModelToJson(QuestionModel instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$QuestionModelToJson(QuestionModel instance) =>
       'enonce': instance.enonce,
       'categorieId': instance.categorieId,
       'choix': instance.choix,
+      'correctAnswer': instance.correctAnswer,
     };
