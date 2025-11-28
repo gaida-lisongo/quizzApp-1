@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:quizz_game/core/config/app_theme.dart';
 import 'package:quizz_game/ui/dashboard/home_page.dart';
 import 'package:quizz_game/ui/dashboard/login_page.dart';
 import 'package:quizz_game/ui/common/loading_indicator.dart';
 
-void main() {
+Future<void> main() async {
   // S'assurer que les liaisons Flutter sont initialisées pour les plugins (comme flutter_secure_storage)
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Charger les variables d'environnement depuis .env
+  await dotenv.load(fileName: ".env");
   
   runApp(
     // Envelopper l'application avec ProviderScope pour activer Riverpod
