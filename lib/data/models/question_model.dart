@@ -1,5 +1,5 @@
-import 'package::json_annotation/json_annotation.dart';
-part 'category_model.g.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'question_model.g.dart';
 
 @JsonSerializable()
 class QuestionModel {
